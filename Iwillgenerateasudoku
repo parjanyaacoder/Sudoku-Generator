@@ -1,0 +1,85 @@
+import java.util.*;
+class sudok
+{
+  public static void main()
+  { 
+      int i,j,k,l,m,n,x,y,z,c=0,d=0,f=0,q,p,b=0,w,e,t;
+      Scanner sc=new Scanner(System.in);
+      int arr[][]=new int[9][9];
+          for(k=0;k<=8;k++)
+                  {
+                    for(l=0;l<=8;l++)
+                    {
+                        arr[k][l]=0;
+                    }
+                }
+        System.out.println(" Enter 1 for Easy,2 for Medium, 3 for Hard");
+        m=sc.nextInt();
+               if(m==1)
+         c=15;
+        else if(m==2)
+         c=10;
+        else if(m==3)
+         c=5;
+        else
+        {System.out.println("Renter m");
+            m=sc.nextInt();
+        }
+        for(n=1;n<=c;n++)
+        {  if(b==0)
+            {
+          Random r =new Random();
+          x=r.nextInt(8);
+           y=r.nextInt(8);
+           z=r.nextInt(10);
+                if(arr[x][y]!=0)
+                {
+                    n--;
+                  }
+               for(j=0;j<9;j++)
+               {
+                   if(arr[x][j]==z)
+                   b++;
+                }
+                 for(i=0;i<9;i++)
+               {
+                   if(arr[i][y]==z)
+                   b++;
+                }
+                for(p=0;p<=8;p=p+3)
+                { for(q=p;q<=p+2;q++)
+                 {
+                   for(w=0;w<=2;w++)
+                   { if(arr[x][y]==z)
+                   b++;
+                }
+                       for(e=p;e<=p+2;e++)
+                       
+                 {
+                     if(arr[x][y]==z)
+                   b++;
+                }
+                     for(t=p;t<=p+2;t++)
+                 {  if(arr[x][y]==z)
+                   b++;
+                } 
+               
+            }
+        }
+         if(b==0)
+                 arr[x][y]=z;
+                 else 
+                b=0;
+        
+        }}
+        for(k=0;k<=8;k++)
+                  {
+                    for(l=0;l<=8;l++)
+                    {
+                        System.out.print(arr[k][l]);
+                    }
+                    System.out.println(" ");
+                }
+                }
+        }
+  
